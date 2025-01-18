@@ -3,7 +3,11 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+    origin: 'https://smart-bin-frontend.onrender.com', // or .render.com domain from your frontend
+  }));
+  
 app.use(express.json());
 
 // Fictitious data for 3 smart bins in Nottingham
