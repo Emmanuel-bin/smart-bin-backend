@@ -536,7 +536,7 @@ const fictitiousSets = [
       location: { lat: 52.9210, lng: -1.2157 },
       temperature: 23.5,
       humidity: 67,
-      wasteLevel: [10, 25, 48, 17, 68, 42],
+      wasteLevel: [10, 95, 48, 17, 68, 42],
     },
   ],
   [
@@ -552,7 +552,7 @@ const fictitiousSets = [
       location: { lat: 52.9300, lng: -1.1612 },
       temperature: 26.5,
       humidity: 56,
-      wasteLevel: [20, 54, 80, 55, 32, 27],
+      wasteLevel: [20, 54, 80, 55, 32, 99],
     },
     {
       binId: 'bin3',
@@ -568,7 +568,7 @@ const fictitiousSets = [
       location: { lat: 52.9548, lng: -1.1581 },
       temperature: 25.6,
       humidity: 61,
-      wasteLevel: [24, 37, 52, 63, 66, 78],
+      wasteLevel: [95, 37, 52, 63, 66, 78],
     },
     {
       binId: 'bin2',
@@ -582,7 +582,7 @@ const fictitiousSets = [
       location: { lat: 52.9210, lng: -1.2157 },
       temperature: 23.1,
       humidity: 68,
-      wasteLevel: [14, 30, 52, 20, 72, 45],
+      wasteLevel: [14, 30, 52, 96, 72, 45],
     },
   ],
   [
@@ -591,7 +591,7 @@ const fictitiousSets = [
       location: { lat: 52.9548, lng: -1.1581 },
       temperature: 26.2,
       humidity: 60,
-      wasteLevel: [26, 40, 55, 65, 70, 80],
+      wasteLevel: [26, 97, 55, 65, 70, 80],
     },
     {
       binId: 'bin2',
