@@ -408,7 +408,7 @@ mongoose.connection.on('error', (err) => {
   console.error('MongoDB connection error:', err);
 });
 
-// Schema/Model
+// Schema/Model for bin readings
 const binReadingSchema = new mongoose.Schema({
   binId: { type: String, required: true },
   location: {
@@ -420,243 +420,8 @@ const binReadingSchema = new mongoose.Schema({
   wasteLevel: [Number],
   timestamp: { type: Date, default: Date.now },
 });
+
 const BinReading = mongoose.model('BinReading', binReadingSchema);
-
-// Ten Fictitious Data Sets
-const fictitiousSets = [
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 25.0,
-      humidity: 60,
-      wasteLevel: [10, 20, 30, 40, 50, 60],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 27.1,
-      humidity: 55,
-      wasteLevel: [96, 35, 65, 45, 20, 10],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 22.5,
-      humidity: 65,
-      wasteLevel: [99, 15, 40, 10, 60, 35],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 25.3,
-      humidity: 61,
-      wasteLevel: [15, 25, 35, 45, 55, 65],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 27.4,
-      humidity: 53,
-      wasteLevel: [10, 40, 70, 45, 20, 15],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 22.8,
-      humidity: 64,
-      wasteLevel: [97, 20, 42, 12, 63, 37],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 25.8,
-      humidity: 62,
-      wasteLevel: [16, 27, 98, 42, 57, 68],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 26.9,
-      humidity: 54,
-      wasteLevel: [12, 45, 72, 48, 25, 20],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 23.2,
-      humidity: 66,
-      wasteLevel: [8, 22, 45, 14, 65, 40],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 26.0,
-      humidity: 59,
-      wasteLevel: [18, 29, 39, 49, 60, 70],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 27.7,
-      humidity: 58,
-      wasteLevel: [15, 50, 75, 48, 97, 22],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 22.9,
-      humidity: 63,
-      wasteLevel: [9, 23, 96, 16, 67, 41],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 24.5,
-      humidity: 64,
-      wasteLevel: [20, 32, 45, 96, 63, 72],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 28.1,
-      humidity: 52,
-      wasteLevel: [18, 52, 98, 52, 30, 25],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 23.5,
-      humidity: 67,
-      wasteLevel: [10, 95, 98, 17, 68, 42],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 24.9,
-      humidity: 63,
-      wasteLevel: [22, 35, 50, 60, 65, 75],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 26.5,
-      humidity: 56,
-      wasteLevel: [20, 97, 80, 55, 92, 99],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 24.2,
-      humidity: 62,
-      wasteLevel: [12, 28, 50, 18, 70, 44],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 25.6,
-      humidity: 61,
-      wasteLevel: [95, 37, 52, 63, 66, 78],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 27.3,
-      humidity: 57,
-      wasteLevel: [23, 58, 93, 97, 34, 29],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 23.1,
-      humidity: 68,
-      wasteLevel: [14, 30, 52, 96, 72, 45],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 26.2,
-      humidity: 60,
-      wasteLevel: [26, 97, 55, 65, 70, 80],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 28.0,
-      humidity: 54,
-      wasteLevel: [25, 60, 85, 59, 36, 31],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 22.7,
-      humidity: 66,
-      wasteLevel: [16, 32, 55, 22, 75, 48],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 24.8,
-      humidity: 65,
-      wasteLevel: [28, 42, 57, 67, 72, 82],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 26.1,
-      humidity: 58,
-      wasteLevel: [28, 62, 88, 62, 38, 33],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 24.9,
-      humidity: 61,
-      wasteLevel: [18, 35, 58, 24, 77, 50],
-    },
-  ],
-  [
-    {
-      binId: 'bin1',
-      location: { lat: 52.9548, lng: -1.1581 },
-      temperature: 25.5,
-      humidity: 59,
-      wasteLevel: [30, 45, 60, 70, 75, 85],
-    },
-    {
-      binId: 'bin2',
-      location: { lat: 52.9300, lng: -1.1612 },
-      temperature: 27.8,
-      humidity: 56,
-      wasteLevel: [30, 65, 99, 64, 40, 95],
-    },
-    {
-      binId: 'bin3',
-      location: { lat: 52.9210, lng: -1.2157 },
-      temperature: 23.3,
-      humidity: 67,
-      wasteLevel: [90, 37, 60, 96, 80, 55],
-    },
-  ],
-];
-
-let currentIndex = 0; // track which of the 10 sets is active
 
 // SSE clients
 let sseClients = [];
@@ -682,7 +447,7 @@ app.get('/api/bins/stream', (req, res) => {
 // GET /api/bins => returns the latest doc for each bin (used by app.js & details.html)
 app.get('/api/bins', async (req, res) => {
   try {
-    const bins = await BinReading.find({}); // get all bins from DB
+    const bins = await BinReading.find({});
     res.json(bins);
   } catch (err) {
     console.error('Error fetching bins:', err);
@@ -690,9 +455,66 @@ app.get('/api/bins', async (req, res) => {
   }
 });
 
-// Root
+// NEW: POST /api/bins/data => PC scripts POST real-time data here
+app.post('/api/bins/data', async (req, res) => {
+  try {
+    // Expecting a JSON body like:
+    // {
+    //   "binId": "bin1",
+    //   "location": { "lat": 52.930, "lng": -1.1612 },
+    //   "temperature": 27.1,
+    //   "humidity": 55,
+    //   "wasteLevel": [5, 35, 65, 45, 20, 10],
+    //   "timestamp": "2023-11-20T12:00:00Z" (optional)
+    // }
+
+    const {
+      binId,
+      location,
+      temperature,
+      humidity,
+      wasteLevel,
+      timestamp
+    } = req.body;
+
+    if (!binId || !wasteLevel) {
+      return res.status(400).json({ error: 'binId and wasteLevel are required' });
+    }
+
+    // Upsert in DB
+    const updatedDoc = await BinReading.findOneAndUpdate(
+      { binId },
+      {
+        $set: {
+          location,
+          temperature,
+          humidity,
+          wasteLevel,
+          // If no timestamp provided, default is used
+          timestamp: timestamp ? new Date(timestamp) : new Date(),
+        },
+      },
+      { upsert: true, new: true }
+    );
+
+    console.log(`Received new data for bin ${binId}. Upserted doc:`, updatedDoc);
+
+    // Broadcast to SSE clients so map & details page see real-time changes
+    const payload = JSON.stringify([updatedDoc]); 
+    sseClients.forEach((client) => {
+      client.write(`data: ${payload}\n\n`);
+    });
+
+    res.json({ success: true, doc: updatedDoc });
+  } catch (err) {
+    console.error('Error in POST /api/bins/data:', err);
+    res.status(500).json({ error: 'Failed to upsert bin data' });
+  }
+});
+
+// Root endpoint
 app.get('/', (req, res) => {
-  res.send('Smart Bin Backend with Nottingham Data & MongoDB Realtime!');
+  res.send('Smart Bin Backend: Now using dynamic POST data from PC scripts!');
 });
 
 // Start the server
@@ -701,37 +523,3 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-// setInterval => cycle every 10 seconds
-setInterval(async () => {
-  currentIndex = (currentIndex + 1) % fictitiousSets.length;
-  const dataSet = fictitiousSets[currentIndex];
-
-  // Upsert each bin reading in the DB
-  for (const reading of dataSet) {
-    try {
-      await BinReading.findOneAndUpdate(
-        { binId: reading.binId },
-        {
-          $set: {
-            location: reading.location,
-            temperature: reading.temperature,
-            humidity: reading.humidity,
-            wasteLevel: reading.wasteLevel,
-            timestamp: new Date(),
-          },
-        },
-        { upsert: true, new: true }
-      );
-    } catch (err) {
-      console.error(`Error upserting bin ${reading.binId}:`, err);
-    }
-  }
-
-  console.log(`Updated DB with set #${currentIndex}.`);
-
-  // Broadcast to SSE clients
-  const payload = JSON.stringify(dataSet);
-  sseClients.forEach((client) => {
-    client.write(`data: ${payload}\n\n`);
-  });
-}, 10000);
